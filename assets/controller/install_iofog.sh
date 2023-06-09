@@ -82,11 +82,7 @@ deploy_controller() {
 	# Install in temporary location
 	mkdir -p "$TMP_DIR/controller"
 	chmod 0777 "$TMP_DIR/controller"
-	if [ -z $version ]; then
-		npm install -g -f @iofog/iofogcontroller --unsafe-perm --prefix "$TMP_DIR/controller"
-	else
-		npm install -g -f "@iofog/iofogcontroller@$version" --unsafe-perm --prefix "$TMP_DIR/controller"
-	fi
+	npm install -g -f "iofogcontroller"
 	# Move files into $INSTALL_DIR/controller
 	mkdir -p "$INSTALL_DIR/"
 	rm -rf "$INSTALL_DIR/controller" # Clean possible previous install
